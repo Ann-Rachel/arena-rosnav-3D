@@ -4,13 +4,13 @@ services:
     build: ./
     command: tail -f /dev/null
     volumes: 
-      - .:/root/catkin_ws/src/arena-rosnav-3d
+      - .:/root/catkin_ws/src/arena-rosnav-3D
     environment:
       - DISPLAY=novnc:0.0
-    image: arena_rosnav_3d
+    image: arena_rosnav_3D
     networks:
       - x11
-    container_name: arena-rosnav-3d
+    container_name: arena-rosnav-3D
   novnc:  
     image: theasp/novnc:latest
     env_file:
