@@ -53,7 +53,9 @@ RUN pip3 install --upgrade pip \
 export WORKON_HOME=/root/.python_env \n\
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3 \n\
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv \n\
-export PYTHONPATH=/root/catkin_ws/src/arena-rosnav:${PYTHONPATH} \n\
+export PYTHONPATH=/root/catkin_ws/src/
+
+:${PYTHONPATH} \n\
 export TURTLEBOT3_MODEL=burger \n\
 
 source /usr/local/bin/virtualenvwrapper.sh' >> /root/.bashrc
@@ -81,7 +83,7 @@ RUN . /usr/local/bin/virtualenvwrapper.sh \
 && pip3 install gym \
 && pip3 install PyQt5 \
 && pip3 install scipy \
-&& cd /root/catkin_ws/src/arena-rosnav \
+&& cd /root/catkin_ws/src/arena-rosnav-3D \
 && git checkout \
 && rosws update
 
@@ -101,11 +103,11 @@ RUN . /opt/ros/melodic/setup.sh \
 # 5. Install geometry2 pkg
 RUN . /root/.bashrc \
 && . /opt/ros/melodic/setup.sh \
-&& cd /root/catkin_ws/src/arena-rosnav/ \
+&& cd /root/catkin_ws/src/arena-rosnav-3D/ \
 && . geometry2_install.sh
 
 # 6. start workon rosnav
 RUN echo $'source /root/.python_env/rosnav/bin/activate' >> /root/.bashrc
 
 # 7. Entrypoint
-WORKDIR /root/catkin_ws/src/arena-rosnav/
+WORKDIR /root/catkin_ws/src/arena-rosnav-3D/
