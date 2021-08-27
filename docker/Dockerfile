@@ -53,7 +53,7 @@ RUN pip3 install --upgrade pip \
 export WORKON_HOME=/root/.python_env \n\
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3 \n\
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv \n\
-export PYTHONPATH=/root/catkin_ws/src/ \n\
+export PYTHONPATH=/root/catkin_ws/src/arena-rosnav-3D:${PYTHONPATH} \n\
 export TURTLEBOT3_MODEL=burger \n\
 source /usr/local/bin/virtualenvwrapper.sh' >> /root/.bashrc
 
